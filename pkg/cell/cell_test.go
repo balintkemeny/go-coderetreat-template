@@ -13,15 +13,18 @@ type CellSuite struct {
 }
 
 func (suite *CellSuite) SetupTest() {
-	suite.subject = cell.Cell{
-		X: 2,
-		Y: 3,
-	}
 }
 
-func (suite *CellSuite) TestGetPositionX() {
-	actual, _ := suite.subject.GetPosition()
-	suite.Equal(actual, 2)
+func (suite *CellSuite) TestCellCanReturnItsPosition() {
+	suite.subject = cell.Cell{
+		X: 5,
+		Y: 6,
+	}
+
+	actualX, actualY := suite.subject.GetPosition()
+
+	suite.Equal(5, actualX)
+	suite.Equal(6, actualY)
 }
 
 func TestCellSuite(t *testing.T) {

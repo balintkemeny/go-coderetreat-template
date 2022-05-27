@@ -6,10 +6,6 @@ import (
 )
 
 func main() {
-	testCell := cell.Cell{
-		X: 2,
-		Y: 3,
-	}
-
-	fmt.Println(testCell)
+	world := make(map[cell.Cell]struct{})
+	fmt.Println(world)
 }
